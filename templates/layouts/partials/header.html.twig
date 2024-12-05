@@ -1,25 +1,24 @@
-<body class="index-page">
+<!-- Header Section -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
-<header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="{{path('app_home')}}" class="logo d-flex align-items-center">
-        <img src="assets/img/logo/logo.png" alt="Logo">
-        <!-- <h1 class="sitename">Mi-<span>Design</span></h1> -->
+      <a href="{{path('app_home')}}" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/logo/logo.png" alt="">
+        <!-- <h1 class="sitename">mi-design</h1><span></span> -->
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#" class="active">Accueil</a></li>
+          <li><a href="#hero" class="active">Accueil</a></li>
           <li><a href="#about">À propos</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#real-estate">Hotels</a></li>
-          <li><a href="#footer">Contact</a></li>
+          <li><a href="#portfolio">Hotels</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
+      <a class="btn-getstarted" href="{{path('app_add_hotel')}}">Ajouts Hotels</a>
+
     </div>
-  </header>   
-  </body>
+  </header>
