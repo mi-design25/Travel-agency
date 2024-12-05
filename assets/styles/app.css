@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* form images*/
+.image_rounded{
+    border-radius: 50px 0 50px 0;
+}

@@ -1,3 +1,18 @@
 controllers:
-    resource: ../src/Controller/
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
     type: attribute
+
+
+home:
+    path: /home
+    controller: App\Controller\HomeController::index
+
+etudiant:
+    path: /liste_etudiant
+    controller: App\Controller\ListeEtudiantController::index
+
+professeur:
+    path: /liste_professeur
+    controller: App\Controller\ListeProfesseurController::index

@@ -1,24 +1,76 @@
 <!-- Header Section -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+    <a href="{{ path('app_home') }}" class="logo d-flex align-items-center me-auto me-xl-0">
+      <img src="assets/img/logo/logo.png" alt="">
+    </a>
 
-      <a href="{{path('app_home')}}" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/logo/logo.png" alt="">
-        <!-- <h1 class="sitename">mi-design</h1><span></span> -->
-      </a>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#real-estate">Hotels - Voyages</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Accueil</a></li>
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Hotels</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+    <a class="btn-getstarted" href="#" data-bs-toggle="modal" data-bs-target="#addHotelModal">Ajouts Hotels</a>
+  </div>
+</header>
 
-      <a class="btn-getstarted" href="{{path('app_add_hotel')}}">Ajouts Hotels</a>
-
+<!-- Modal -->
+<div class="modal fade" id="addHotelModal" tabindex="-1" aria-labelledby="addHotelModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addHotelModalLabel">Ajouter un Hôtel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addHotelForm" action="{{ path('add_hotel') }}" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_token" value="{{ csrf_token }}">
+          <div class="mb-3">
+            <label for="hotelName" class="form-label">Nom de l'Hôtel</label>
+            <input type="text" class="form-control" id="hotelName" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="hotelImage" class="form-label">Image</label>
+            <input type="file" class="form-control" id="hotelImage" name="image" accept="image/*" required>
+          </div>
+          <div class="mb-3">
+            <label for="hotelPrice" class="form-label">Prix</label>
+            <input type="number" class="form-control" id="hotelPrice" name="price" required>
+          </div>
+          <div class="mb-3">
+            <label for="hotelType" class="form-label">Type</label>
+            <input type="text" class="form-control" id="hotelType" name="type" required>
+          </div>
+          <div class="mb-3">
+            <label for="hotelArea" class="form-label">Surface (m²)</label>
+            <input type="number" class="form-control" id="hotelArea" name="area" required>
+          </div>
+          <div class="mb-3">
+            <label for="hotelBeds" class="form-label">Nombre de lits</label>
+            <input type="number" class="form-control" id="hotelBeds" name="beds" required>
+          </div>
+          <div class="mb-3">
+            <label for="hotelBaths" class="form-label">Nombre de salles de bain</label>
+            <input type="number" class="form-control" id="hotelBaths" name="baths" required>
+          </div>
+          <div class="mb-3">
+            <label for="hotelGarages" class="form-label">Nombre de garages</label>
+            <input type="number" class="form-control" id="hotelGarages" name="garages" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>
+      </div>
     </div>
-  </header>
+  </div>
+</div>
+
+
+<!-- Bootstrap JS (Assurez-vous d'inclure Bootstrap JS) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

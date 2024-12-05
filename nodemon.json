@@ -1,0 +1,4 @@
+{
+  "watch": ["./assets", "./templates"],
+  "exec": "npm run build"
+}
